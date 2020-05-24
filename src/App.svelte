@@ -90,7 +90,7 @@
 			<div class="profiles-icons-container">
 				{#each profile_data as profile_item}
 					{#if profile_item.id === params.profile}
-							<div class="profile-image-wr pfofile-icon-active" on:click={()=>params = resetInputs(profile_item.id)}>
+							<div class="profile-image-wr profile-icon-active" on:click={()=>params = resetInputs(profile_item.id)}>
 								<img src={profile_item.icon_src}/>
 							</div>
 					{:else}
@@ -104,16 +104,16 @@
 				<div class="material-title">
 					ВЫБЕРИТЕ МАТЕРИАЛ
 				</div>
-				<select bind:value={selected_mark} on:change={() => selected_value = 0}>
+				<select class="form-control" bind:value={selected_mark} on:change={() => selected_value = 0}>
 					{#each metalls as item }
-						<option value={item.id}>{item.name}</option>
+						<option class="form-control" value={item.id}>{item.name}</option>
 					{/each}
 				</select>
 				<div class="material-title">
 					УКАЖИТЕ МАРКУ
 				</div>
 				{#if selected_mark}
-					<select bind:value={selected_value} on:change={() => selected_density = selected_value}>
+					<select class="form-control" bind:value={selected_value} on:change={() => selected_density = selected_value}>
 						{#each selected_met.group as item, index }
 							<option value={index}>{item.name}</option>
 						{/each}
@@ -127,63 +127,63 @@
                 {#if params.profile===0}
 						<div class="workbox-input-wr">
 							<label for="diameter">ДИАМЕТР (d), ММ</label>
-							<input name="diametr" class="workbox-input" id="diameter" bind:value={params.d}>
+							<input  name="diametr" class="workbox-input form-control" id="diameter" bind:value={params.d}>
 						</div>
 						<div class="workbox-input-wr">
 							<label for="length">ДЛИНА, ММ</label>
-							<input name="length" class="workbox-input" id="length" bind:value={params.l}>
+							<input name="length" class="workbox-input form-control" id="length" bind:value={params.l}>
 						</div>
 				{:else if params.profile===1}
 					<div class="workbox-input-wr">
 						<label for="width">ШИРИНА (h), ММ</label>
-						<input name="width" class="workbox-input" id="width" bind:value={params.w}>
+						<input name="width" class="workbox-input form-control" id="width" bind:value={params.w}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="length">ДЛИНА, ММ</label>
-						<input name="length" class="workbox-input" id="length" bind:value={params.l}>
+						<input name="length" class="workbox-input form-control" id="length" bind:value={params.l}>
 					</div>
 				{:else if params.profile===2 }
 					<div class="workbox-input-wr">
 						<label for="width">ШИРИНА (h), ММ</label>
-						<input name="width" class="workbox-input" id="width" bind:value={params.w}>
+						<input name="width" class="workbox-input form-control" id="width" bind:value={params.w}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="length">ДЛИНА (l), ММ</label>
-						<input name="length" class="workbox-input" id="length" bind:value={params.l}>
+						<input name="length" class="workbox-input form-control" id="length" bind:value={params.l}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="thickness">ТОЛЩИНА, ММ</label>
-						<input name="thickness" class="workbox-input" id="thickness" bind:value={params.t}>
+						<input name="thickness" class="workbox-input form-control" id="thickness" bind:value={params.t}>
 					</div>
 				{:else if params.profile===3 }
 					<div class="workbox-input-wr">
 						<label for="diameter">ДИАМЕТР (d), ММ</label>
-						<input name="diameter" class="workbox-input" id="diameter" bind:value={params.d}>
+						<input name="diameter" class="workbox-input form-control" id="diameter" bind:value={params.d}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="thickness">ТОЛЩИНА (k), ММ</label>
-						<input name="thickness" class="workbox-input" id="thickness" bind:value={params.t}>
+						<input name="thickness" class="workbox-input form-control" id="thickness" bind:value={params.t}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="length">ДЛИНА, ММ</label>
-						<input name="length" class="workbox-input" id="length" bind:value={params.l}>
+						<input name="length" class="workbox-input form-control" id="length" bind:value={params.l}>
 					</div>
 				{:else if params.profile===4 }
 					<div class="workbox-input-wr">
 						<label for="height">ДЛИНА СТОРОНЫ h, ММ</label>
-						<input name="height" class="workbox-input" id="height" bind:value={params.h}>
+						<input name="height" class="workbox-input form-control" id="height" bind:value={params.h}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="width">ДЛИН СТОРОНЫ k, ММ</label>
-						<input name="width" class="workbox-input" id="width" bind:value={params.w}>
+						<input name="width" class="workbox-input form-control" id="width" bind:value={params.w}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="thickness">ТОЛЩИНА (k), ММ</label>
-						<input name="thickness" class="workbox-input" id="thickness" bind:value={params.t}>
+						<input name="thickness" class="workbox-input form-control" id="thickness" bind:value={params.t}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="length">ДЛИНА, ММ</label>
-						<input name="length" class="workbox-input" id="length" bind:value={params.l}>
+						<input name="length" class="workbox-input form-control" id="length" bind:value={params.l}>
 					</div>
 				{:else if params.profile===5 }
 					<div class="workbox-input-wr">
@@ -192,62 +192,62 @@
 					</div>
 					<div class="workbox-input-wr">
 						<label for="width">ДЛИНА СТОРОНЫ l, ММ</label>
-						<input name="width" class="workbox-input" id="width" bind:value={params.w}>
+						<input name="width" class="workbox-input form-control" id="width" bind:value={params.w}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="thickness">ТОЛЩИНА (k), ММ</label>
-						<input name="thickness" class="workbox-input" id="thickness" bind:value={params.t}>
+						<input name="thickness" class="workbox-input form-control" id="thickness" bind:value={params.t}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="length">ДЛИНА, ММ</label>
-						<input name="length" class="workbox-input" id="length" bind:value={params.l}>
+						<input name="length" class="workbox-input form-control" id="length" bind:value={params.l}>
 					</div>
 				{:else if params.profile===6 }
 					<div class="workbox-input-wr">
 						<label for="height">РАЗМЕР ГРАНИ h, ММ</label>
-						<input name="height" class="workbox-input" id="height" bind:value={params.h}>
+						<input name="height" class="workbox-input form-control" id="height" bind:value={params.h}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="length">ДЛИНА, ММ</label>
-						<input name="length" class="workbox-input" id="length" bind:value={params.l}>
+						<input name="length" class="workbox-input form-control" id="length" bind:value={params.l}>
 					</div>
 				{:else if params.profile===7 }
 					<div class="workbox-input-wr">
 						<label for="height">ДЛИНА СТОРОНЫ h, ММ</label>
-						<input name="height" class="workbox-input" id="height" bind:value={params.h}>
+						<input name="height" class="workbox-input form-control" id="height" bind:value={params.h}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="width">ДЛИНА СТОРОНЫ l, ММ</label>
-						<input name="width" class="workbox-input" id="width" bind:value={params.w}>
+						<input name="width" class="workbox-input form-control" id="width" bind:value={params.w}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="s-measure">ТОЛЩИНА (s), ММ</label>
-						<input name="s-measure" class="workbox-input" id="s-measure" bind:value={params.s}>
+						<input name="s-measure" class="workbox-input form-control" id="s-measure" bind:value={params.s}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="thickness">ТОЛЩИНА (k), ММ</label>
-						<input name="thickness" class="workbox-input" id="thickness" bind:value={params.t}>
+						<input name="thickness" class="workbox-input form-control" id="thickness" bind:value={params.t}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="length">ДЛИНА, ММ</label>
-						<input name="length" class="workbox-input" id="length" bind:value={params.l}>
+						<input name="length" class="workbox-input form-control" id="length" bind:value={params.l}>
 					</div>
 				{:else if params.profile===8 }
 					<div class="workbox-input-wr">
 						<label for="height">ДЛИНА СТОРОНЫ h, ММ</label>
-						<input name="height" class="workbox-input" id="height" bind:value={params.h}>
+						<input name="height" class="workbox-input form-control" id="height" bind:value={params.h}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="width">ДЛИНА СТОРОНЫ l, ММ</label>
-						<input name="width" class="workbox-input" id="width" bind:value={params.w}>
+						<input name="width" class="workbox-input form-control" id="width" bind:value={params.w}>
 					</div>
 					<div class="workbox-input-wr">
 						<label for="thickness">ТОЛЩИНА, ММ</label>
-						<input name="thickness" class="workbox-input" id="thickness" bind:value={params.t}>
+						<input name="thickness" class="workbox-input form-control" id="thickness" bind:value={params.t}>
 					</div>
 				{/if}
 				<div class="workbox-submit-btn-wr">
-					<button on:click={()=>params=calculate(params.profile, density, params.d, params.l, params.w, params.t, params.h, params.s)}>Рассчитать</button>
+					<button class="calc-button" on:click={()=>params=calculate(params.profile, density, params.d, params.l, params.w, params.t, params.h, params.s)}>Рассчитать</button>
 				</div>
 			</div>
 			<div class="workbox-result-wr">
