@@ -79,7 +79,7 @@
 			<div class="profile-draw">
 				{#each profile_data as profile_item}
 					{#if profile_item.id === params.profile}
-						<div class="profile-image-wr">
+						<div class="profile-draw-image-wr">
 							<img src={profile_item.draw_src}/>
 						</div>
 					{/if}
@@ -89,9 +89,15 @@
 		<div class="workbox-container">
 			<div class="profiles-icons-container">
 				{#each profile_data as profile_item}
-					<div class="profile-image-wr" on:click={()=>params = resetInputs(profile_item.id)}>
-						<img src={profile_item.icon_src}/>
-					</div>
+					{#if profile_item.id === params.profile}
+							<div class="profile-image-wr pfofile-icon-active" on:click={()=>params = resetInputs(profile_item.id)}>
+								<img src={profile_item.icon_src}/>
+							</div>
+					{:else}
+							<div class="profile-image-wr" on:click={()=>params = resetInputs(profile_item.id)}>
+								<img src={profile_item.icon_src}/>
+							</div>
+					{/if}
 				{/each}
 			</div>
 			<div class="mark-select-wr">
